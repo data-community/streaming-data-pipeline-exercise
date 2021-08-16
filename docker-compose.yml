@@ -28,8 +28,8 @@ services:
             interval: 10s
         depends_on:
         -   zookeeper
-#        volumes:
-#        -   ./data/kafka:/var/lib/kafka/data
+        volumes:
+        -   ./data/kafka:/var/lib/kafka/data
         ports:
         -   9092:9092
 
@@ -37,6 +37,8 @@ services:
         image: confluentinc/cp-zookeeper:5.4.4
         environment:
             ZOOKEEPER_CLIENT_PORT: 2181
+        volumes:
+        -  ./data/zookeeper/data:/var/lib/zookeeper/data
         ports:
         -   2181:2181
 
